@@ -417,6 +417,317 @@ namespace ClientApplication.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductDTO", Namespace="WcfService")]
+    [System.SerializableAttribute()]
+    public partial class ProductDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ISBNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientApplication.ServiceReference.ProductTypeDTO ProductTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime Publish_DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientApplication.ServiceReference.Publishing_HouseDTO PublishingHouseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> Unique_IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ISBN {
+            get {
+                return this.ISBNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ISBNField, value) != true)) {
+                    this.ISBNField = value;
+                    this.RaisePropertyChanged("ISBN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Pages {
+            get {
+                return this.PagesField;
+            }
+            set {
+                if ((this.PagesField.Equals(value) != true)) {
+                    this.PagesField = value;
+                    this.RaisePropertyChanged("Pages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientApplication.ServiceReference.ProductTypeDTO ProductType {
+            get {
+                return this.ProductTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
+                    this.ProductTypeField = value;
+                    this.RaisePropertyChanged("ProductType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Publish_Date {
+            get {
+                return this.Publish_DateField;
+            }
+            set {
+                if ((this.Publish_DateField.Equals(value) != true)) {
+                    this.Publish_DateField = value;
+                    this.RaisePropertyChanged("Publish_Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientApplication.ServiceReference.Publishing_HouseDTO PublishingHouse {
+            get {
+                return this.PublishingHouseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PublishingHouseField, value) != true)) {
+                    this.PublishingHouseField = value;
+                    this.RaisePropertyChanged("PublishingHouse");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Unique_Id {
+            get {
+                return this.Unique_IdField;
+            }
+            set {
+                if ((this.Unique_IdField.Equals(value) != true)) {
+                    this.Unique_IdField = value;
+                    this.RaisePropertyChanged("Unique_Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductTypeDTO", Namespace="WcfService")]
+    [System.SerializableAttribute()]
+    public partial class ProductTypeDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Publishing_HouseDTO", Namespace="WcfService")]
+    [System.SerializableAttribute()]
+    public partial class Publishing_HouseDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IClientService")]
     public interface IClientService {
@@ -450,6 +761,36 @@ namespace ClientApplication.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/DeleteAuthor", ReplyAction="http://tempuri.org/IClientService/DeleteAuthorResponse")]
         System.Threading.Tasks.Task<bool> DeleteAuthorAsync(ClientApplication.ServiceReference.AuthorDTO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/GetAllProducts", ReplyAction="http://tempuri.org/IClientService/GetAllProductsResponse")]
+        ClientApplication.ServiceReference.ProductDTO[] GetAllProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/GetAllProducts", ReplyAction="http://tempuri.org/IClientService/GetAllProductsResponse")]
+        System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO[]> GetAllProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/GetProductByUnique_Id", ReplyAction="http://tempuri.org/IClientService/GetProductByUnique_IdResponse")]
+        ClientApplication.ServiceReference.ProductDTO GetProductByUnique_Id(int Unique_Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/GetProductByUnique_Id", ReplyAction="http://tempuri.org/IClientService/GetProductByUnique_IdResponse")]
+        System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO> GetProductByUnique_IdAsync(int Unique_Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/AddNewProduct", ReplyAction="http://tempuri.org/IClientService/AddNewProductResponse")]
+        bool AddNewProduct(ClientApplication.ServiceReference.ProductDTO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/AddNewProduct", ReplyAction="http://tempuri.org/IClientService/AddNewProductResponse")]
+        System.Threading.Tasks.Task<bool> AddNewProductAsync(ClientApplication.ServiceReference.ProductDTO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/UpdateProduct", ReplyAction="http://tempuri.org/IClientService/UpdateProductResponse")]
+        bool UpdateProduct(ClientApplication.ServiceReference.ProductDTO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/UpdateProduct", ReplyAction="http://tempuri.org/IClientService/UpdateProductResponse")]
+        System.Threading.Tasks.Task<bool> UpdateProductAsync(ClientApplication.ServiceReference.ProductDTO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/DeleteProduct", ReplyAction="http://tempuri.org/IClientService/DeleteProductResponse")]
+        bool DeleteProduct(ClientApplication.ServiceReference.ProductDTO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/DeleteProduct", ReplyAction="http://tempuri.org/IClientService/DeleteProductResponse")]
+        System.Threading.Tasks.Task<bool> DeleteProductAsync(ClientApplication.ServiceReference.ProductDTO obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -517,6 +858,46 @@ namespace ClientApplication.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> DeleteAuthorAsync(ClientApplication.ServiceReference.AuthorDTO obj) {
             return base.Channel.DeleteAuthorAsync(obj);
+        }
+        
+        public ClientApplication.ServiceReference.ProductDTO[] GetAllProducts() {
+            return base.Channel.GetAllProducts();
+        }
+        
+        public System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO[]> GetAllProductsAsync() {
+            return base.Channel.GetAllProductsAsync();
+        }
+        
+        public ClientApplication.ServiceReference.ProductDTO GetProductByUnique_Id(int Unique_Id) {
+            return base.Channel.GetProductByUnique_Id(Unique_Id);
+        }
+        
+        public System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO> GetProductByUnique_IdAsync(int Unique_Id) {
+            return base.Channel.GetProductByUnique_IdAsync(Unique_Id);
+        }
+        
+        public bool AddNewProduct(ClientApplication.ServiceReference.ProductDTO obj) {
+            return base.Channel.AddNewProduct(obj);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddNewProductAsync(ClientApplication.ServiceReference.ProductDTO obj) {
+            return base.Channel.AddNewProductAsync(obj);
+        }
+        
+        public bool UpdateProduct(ClientApplication.ServiceReference.ProductDTO obj) {
+            return base.Channel.UpdateProduct(obj);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(ClientApplication.ServiceReference.ProductDTO obj) {
+            return base.Channel.UpdateProductAsync(obj);
+        }
+        
+        public bool DeleteProduct(ClientApplication.ServiceReference.ProductDTO obj) {
+            return base.Channel.DeleteProduct(obj);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteProductAsync(ClientApplication.ServiceReference.ProductDTO obj) {
+            return base.Channel.DeleteProductAsync(obj);
         }
     }
 }

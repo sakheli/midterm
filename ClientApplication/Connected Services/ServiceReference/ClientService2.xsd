@@ -44,4 +44,39 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GenderDTO" nillable="true" type="tns:GenderDTO" />
+  <xs:complexType name="ArrayOfProductDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductDTO" nillable="true" type="tns:ProductDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductDTO" nillable="true" type="tns:ArrayOfProductDTO" />
+  <xs:complexType name="ProductDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISBN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pages" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="tns:ProductTypeDTO" />
+      <xs:element minOccurs="0" name="Publish_Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PublishingHouse" nillable="true" type="tns:Publishing_HouseDTO" />
+      <xs:element minOccurs="0" name="Unique_Id" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductDTO" nillable="true" type="tns:ProductDTO" />
+  <xs:complexType name="ProductTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductTypeDTO" nillable="true" type="tns:ProductTypeDTO" />
+  <xs:complexType name="Publishing_HouseDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Publishing_HouseDTO" nillable="true" type="tns:Publishing_HouseDTO" />
 </xs:schema>

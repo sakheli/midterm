@@ -20,7 +20,7 @@ namespace ClientApplication.Models
         [Display(Name = "სახელი")]
         public string Firstname { get; set; }
 
-        [Required(ErrorMessage = "გვარი")]
+        [Required(ErrorMessage = "აუცილებელია გვარი")]
         [StringLength(50, ErrorMessage = "სახელი არ უნდა იყოს 50 ასოზე მეტი")]
         [MinLength(2, ErrorMessage = "სახელი არ უნდა იყოს 2 სიმბოლოზე ნაკლები")]
         [Display(Name = "გვარი")]
