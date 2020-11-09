@@ -1,0 +1,41 @@
+﻿using EditorService.DataContracts;
+using EditorService.ServiceContracts;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+
+namespace EditorService.Services
+{
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ClientService" in code, svc and config file together.
+    // NOTE: In order to launch WCF Test Client for testing this service, please select ClientService.svc or ClientService.svc.cs at the Solution Explorer and start debugging.
+    public class ClientService : IClientService
+    {
+        public List<AuthorDTO> GetAllAuthores()
+        {
+            return BusinessLogic.BussinessLogic.GetAllAuthores();
+        }
+
+        public AuthorDTO GetAuthorByUnique_Id(int Unique_Id)
+        {
+            return BusinessLogic.BussinessLogic.GetAuthorByUnique_Id(Unique_Id);
+        }
+
+        public bool AddNewAuthor(AuthorDTO obj)
+        {
+            return BusinessLogic.BussinessLogic.AddNewAuthor(obj);
+        }
+
+        public bool UpdateAuthor(AuthorDTO obj)
+        {
+            return BusinessLogic.BussinessLogic.UpdateAuthor(obj);
+        }
+
+        public bool DeleteAuthor(AuthorDTO obj)
+        {
+            return BusinessLogic.BussinessLogic.DeleteAuthor(obj);
+        }
+    }
+}

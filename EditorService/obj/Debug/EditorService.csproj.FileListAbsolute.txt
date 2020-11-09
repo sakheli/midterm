@@ -1,0 +1,12 @@
+C:\Users\levan\source\repos\Midterm\EditorService\bin\EditorService.dll.config
+C:\Users\levan\source\repos\Midterm\EditorService\bin\EditorService.dll
+C:\Users\levan\source\repos\Midterm\EditorService\bin\EditorService.pdb
+C:\Users\levan\source\repos\Midterm\EditorService\bin\EntityFramework.dll
+C:\Users\levan\source\repos\Midterm\EditorService\bin\EntityFramework.SqlServer.dll
+C:\Users\levan\source\repos\Midterm\EditorService\bin\EntityFramework.xml
+C:\Users\levan\source\repos\Midterm\EditorService\bin\EntityFramework.SqlServer.xml
+C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.csproj.CoreCompileInputs.cache
+C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.csproj.CopyComplete
+C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.dll
+C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.pdb
+C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.csprojAssemblyReference.cache

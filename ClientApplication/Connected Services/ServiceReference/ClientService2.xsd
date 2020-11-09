@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="WcfService" elementFormDefault="qualified" targetNamespace="WcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAuthorDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthorDTO" nillable="true" type="tns:AuthorDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthorDTO" nillable="true" type="tns:ArrayOfAuthorDTO" />
+  <xs:complexType name="AuthorDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Birth_Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="tns:CityDTO" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="tns:CountryDTO" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="tns:GenderDTO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Personal_Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unique_Id" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorDTO" nillable="true" type="tns:AuthorDTO" />
+  <xs:complexType name="CityDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Country" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CityDTO" nillable="true" type="tns:CityDTO" />
+  <xs:complexType name="CountryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryDTO" nillable="true" type="tns:CountryDTO" />
+  <xs:complexType name="GenderDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gender1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenderDTO" nillable="true" type="tns:GenderDTO" />
+</xs:schema>
