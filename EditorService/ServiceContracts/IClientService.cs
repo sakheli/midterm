@@ -1,11 +1,8 @@
 ﻿using EditorService.DataContracts;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using System.Web;
 
 namespace EditorService.ServiceContracts
 {
@@ -32,6 +29,33 @@ namespace EditorService.ServiceContracts
         [OperationContract]
         [WebGet(UriTemplate = "/DeleteAuthor/{values}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         bool DeleteAuthor(AuthorDTO obj);
+
+
+
+
+
+
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/GetAllProducts", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        List<ProductDTO> GetAllProducts();
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/GetProductByUnique_Id/{Unique_Id}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        ProductDTO GetProductByUnique_Id(int Unique_Id);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/AddNewProduct/{values}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        bool AddNewProduct(ProductDTO obj);
+
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/UpdateProduct/{values}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        bool UpdateProduct(ProductDTO obj);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/DeleteProduct/{values}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        bool DeleteProduct(ProductDTO obj);
     }
 }
 

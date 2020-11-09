@@ -37,6 +37,36 @@
   <wsdl:message name="IClientService_DeleteAuthor_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteAuthorResponse" />
   </wsdl:message>
+  <wsdl:message name="IClientService_GetAllProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetAllProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetProductByUnique_Id_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByUnique_Id" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetProductByUnique_Id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByUnique_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_AddNewProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProduct" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_AddNewProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
   <wsdl:portType name="IClientService">
     <wsdl:operation name="GetAllAuthores">
       <wsdl:input wsaw:Action="http://tempuri.org/IClientService/GetAllAuthores" message="tns:IClientService_GetAllAuthores_InputMessage" />
@@ -57,6 +87,26 @@
     <wsdl:operation name="DeleteAuthor">
       <wsdl:input wsaw:Action="http://tempuri.org/IClientService/DeleteAuthor" message="tns:IClientService_DeleteAuthor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IClientService/DeleteAuthorResponse" message="tns:IClientService_DeleteAuthor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientService/GetAllProducts" message="tns:IClientService_GetAllProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientService/GetAllProductsResponse" message="tns:IClientService_GetAllProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByUnique_Id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientService/GetProductByUnique_Id" message="tns:IClientService_GetProductByUnique_Id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientService/GetProductByUnique_IdResponse" message="tns:IClientService_GetProductByUnique_Id_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientService/AddNewProduct" message="tns:IClientService_AddNewProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientService/AddNewProductResponse" message="tns:IClientService_AddNewProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientService/UpdateProduct" message="tns:IClientService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientService/UpdateProductResponse" message="tns:IClientService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientService/DeleteProduct" message="tns:IClientService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientService/DeleteProductResponse" message="tns:IClientService_DeleteProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IClientService" type="tns:IClientService">
@@ -99,6 +149,51 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteAuthor">
       <soap:operation soapAction="http://tempuri.org/IClientService/DeleteAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="http://tempuri.org/IClientService/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByUnique_Id">
+      <soap:operation soapAction="http://tempuri.org/IClientService/GetProductByUnique_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProduct">
+      <soap:operation soapAction="http://tempuri.org/IClientService/AddNewProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IClientService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IClientService/DeleteProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

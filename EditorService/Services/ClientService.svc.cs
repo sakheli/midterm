@@ -37,5 +37,36 @@ namespace EditorService.Services
         {
             return BusinessLogic.BussinessLogic.DeleteAuthor(obj);
         }
+
+
+
+
+
+
+
+        public List<ProductDTO> GetAllProducts()
+        {
+            return BusinessLogic.BussinessLogic.GetAllProducts();
+        }
+
+        public ProductDTO GetProductByUnique_Id(int Unique_Id)
+        {
+            return BusinessLogic.BussinessLogic.GetProductByUnique_Id(Unique_Id);
+        }
+
+        public bool AddNewProduct(ProductDTO obj)
+        {
+            return BusinessLogic.BussinessLogic.AddNewProduct(obj);
+        }
+
+        public bool UpdateProduct(ProductDTO obj)
+        {
+            return BusinessLogic.BussinessLogic.UpdateProduct(obj);
+        }
+
+        public bool DeleteProduct(ProductDTO obj)
+        {
+            return BusinessLogic.BussinessLogic.DeleteProduct(obj);
+        }
     }
 }

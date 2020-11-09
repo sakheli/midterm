@@ -23,7 +23,7 @@ namespace EditorService.DataContracts
         public string Description { get; set; }
 
         [DataMember]
-        public int? Id_ProductType { get; set; }
+        public ProductTypeDTO ProductType { get; set; }
 
         [DataMember]
         public string ISBN { get; set; }
@@ -32,7 +32,7 @@ namespace EditorService.DataContracts
         public DateTime Publish_Date { get; set; }
 
         [DataMember]
-        public int? Id_PublishingHouse { get; set; }
+        public Publishing_HouseDTO PublishingHouse { get; set; }
 
         [DataMember]
         public int? Pages { get; set; }

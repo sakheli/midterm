@@ -1,0 +1,98 @@
+﻿@model ClientApplication.Models.ProductModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>წიგნის ინფორმაციის რედაქტირება</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Unique_Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductType, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ProductType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Publish_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Publish_Date, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Publish_Date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PublishingHouse, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PublishingHouse, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PublishingHouse, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pages, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Pages, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Pages, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("უკან დაბრუნება", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
