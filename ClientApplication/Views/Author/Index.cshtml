@@ -12,37 +12,37 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.ActionLink("Id", "Index", new { sortOrder = ViewBag.IdSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Unique_Id)
+            @Html.ActionLink("უნიკალური Id", "Index", new { sortOrder = ViewBag.UniqIdSortParm })
+        </th>
+        <th> 
+            @Html.ActionLink("სახელი", "Index", new { sortOrder = ViewBag.NameSortParm }) 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Firstname)
+            @Html.ActionLink("გვარი", "Index", new { sortOrder = ViewBag.LastNameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Lastname)
+            @Html.ActionLink("სქესი", "Index", new { sortOrder = ViewBag.GenderSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Gender)
+            @Html.ActionLink("პირადი ნომერი", "Index", new { sortOrder = ViewBag.PerIdSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Personal_Id)
+            @Html.ActionLink("დაბადების წელი", "Index", new { sortOrder = ViewBag.BirthDateSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Birth_Date)
+            @Html.ActionLink("ქვეყანა", "Index", new { sortOrder = ViewBag.CountSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Country)
+            @Html.ActionLink("ქალაქი", "Index", new { sortOrder = ViewBag.CitySortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.City)
+            @Html.ActionLink("ტელეფონი", "Index", new { sortOrder = ViewBag.PhoneSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.ActionLink("ელექტონული ფოსტა", "Index", new { sortOrder = ViewBag.EmailSortParm })
         </th>
         <th></th>
     </tr>

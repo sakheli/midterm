@@ -10,3 +10,15 @@ C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.csproj
 C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.dll
 C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.pdb
 C:\Users\levan\source\repos\Midterm\EditorService\obj\Debug\EditorService.csprojAssemblyReference.cache
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EditorService.dll.config
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EditorService.dll
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EditorService.pdb
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EntityFramework.dll
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EntityFramework.SqlServer.dll
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EntityFramework.xml
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EntityFramework.SqlServer.xml
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.csprojAssemblyReference.cache
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.csproj.CoreCompileInputs.cache
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.csproj.CopyComplete
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.dll
+C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.pdb

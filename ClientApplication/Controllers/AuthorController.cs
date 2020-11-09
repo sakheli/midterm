@@ -13,13 +13,111 @@ namespace ClientApplication.Controllers
     {
         ServiceReference.ClientServiceClient db = new ServiceReference.ClientServiceClient();
         // GET: Author
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchData)
         {
-            List<AuthorModel> model = new List<AuthorModel>();
+
+            ViewBag.IdSortParm = sortOrder == "id_desc" ? "id" : "id_desc";
+            ViewBag.UniqIdSortParm = sortOrder == "uniqid_desc" ? "uniqid" : "uniqid_desc";
+            ViewBag.NameSortParm = sortOrder == "name_desc" ? "name" : "name_desc";
+            ViewBag.LastNameSortParm = sortOrder == "lastname_desc" ? "lastname" : "lastname_desc";
+            ViewBag.GenderSortParm = sortOrder == "gender_desc" ? "gender" : "gender_desc";
+            ViewBag.PerIdSortParm = sortOrder == "perid_desc" ? "perid" : "perid_desc";
+            ViewBag.BirthDateSortParm = sortOrder == "birthdate_desc" ? "birthdate" : "birthdate_desc";
+            ViewBag.CountSortParm = sortOrder == "count_desc" ? "count" : "count_desc";
+            ViewBag.CitySortParm = sortOrder == "city_desc" ? "city" : "city_desc";
+            ViewBag.PhoneSortParm = sortOrder == "phone_desc" ? "phone" : "phone_desc";
+            ViewBag.EmailSortParm = sortOrder == "email_desc" ? "email" : "email_desc";
+
+
+            List <AuthorModel> model = new List<AuthorModel>();
+
+
 
             var serviceModel = db.GetAllAuthores();
+            List<AuthorDTO> authors;
 
-            foreach (var item in serviceModel)
+
+            switch (sortOrder)
+            {
+                case "id_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Id).ToList();
+                    break;
+                case "id":
+                    authors = serviceModel.OrderBy(s => s.Id).ToList();
+                    break;
+                case "uniqid_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Unique_Id).ToList();
+                    break;
+                case "uniqid":
+                    authors = serviceModel.OrderBy(s => s.Unique_Id).ToList();
+                    break;
+                case "name_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Firstname).ToList();
+                    break;
+                case "name":
+                    authors = serviceModel.OrderBy(s => s.Firstname).ToList();
+                    break;
+                case "lastname_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Lastname).ToList();
+                    break;
+                case "lastname":
+                    authors = serviceModel.OrderBy(s => s.Lastname).ToList();
+                    break;
+                case "gender_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Gender).ToList();
+                    break;
+                case "gender":
+                    authors = serviceModel.OrderBy(s => s.Gender).ToList();
+                    break;
+                case "perid_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Personal_Id).ToList();
+                    break;
+                case "perid":
+                    authors = serviceModel.OrderBy(s => s.Personal_Id).ToList();
+                    break;
+                case "birthdate_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Birth_Date).ToList();
+                    break;
+                case "birthdate":
+                    authors = serviceModel.OrderBy(s => s.Birth_Date).ToList();
+                    break;
+                case "count_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Country).ToList();
+                    break;
+                case "count":
+                    authors = serviceModel.OrderBy(s => s.Country).ToList();
+                    break;
+                case "city_desc":
+                    authors = serviceModel.OrderByDescending(s => s.City).ToList();
+                    break;
+                case "city":
+                    authors = serviceModel.OrderBy(s => s.City).ToList();
+                    break;
+                case "phone_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Phone).ToList();
+                    break;
+                case "phone":
+                    authors = serviceModel.OrderBy(s => s.Phone).ToList();
+                    break;
+                case "email_desc":
+                    authors = serviceModel.OrderByDescending(s => s.Email).ToList();
+                    break;
+                case "email":
+                    authors = serviceModel.OrderBy(s => s.Email).ToList();
+                    break;
+                default:
+                    authors = serviceModel.ToList();
+                    break;
+            }
+
+
+            if (searchData != "")
+            {
+                authors = authors.Where(s => s.Firstname.Contains(searchData)).ToList();
+            }
+
+
+            foreach (var item in authors)
             {
                 AuthorModel obj = new AuthorModel();
                 obj.Id = item.Id;
