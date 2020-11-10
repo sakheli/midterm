@@ -232,6 +232,32 @@ namespace EditorService.BusinessLogic
             }
         }
 
+        public static List<ProductDTO> GetProductsByAuthorId(int AuthorId)
+        {
+            using (DBModel ent = new DBModel())
+            {
+                if (!ent.Authors.Any(i => i.Id == AuthorId))
+                    return null;
+
+                var result = ent.Authors.Where(i => i.Id == AuthorId).First().Products.Select(i =>
+                new ProductDTO
+                {
+                    Id = i.Id,
+                    Unique_Id = i.Unique_Id,
+                    Name = i.Name,
+                    Description = i.Description,
+                    ProductType = new ProductTypeDTO { Id = i.ProductType.Id, Name = i.ProductType.Name },
+                    ISBN = i.ISBN,
+                    Publish_Date = i.Publish_Date,
+                    PublishingHouse = new Publishing_HouseDTO { Id = i.Publishing_House.Id, Name = i.Publishing_House.Name },
+                    Pages = i.Pages,
+                    Address = i.Address
+                }).ToList();
+
+                return result;
+            }
+        }
+
 
         public static bool AddNewProduct(ProductDTO obj)
         {

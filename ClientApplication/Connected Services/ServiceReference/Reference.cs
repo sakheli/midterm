@@ -53,6 +53,9 @@ namespace ClientApplication.ServiceReference {
         private string PhoneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientApplication.ServiceReference.ProductDTO[] ProductsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> Unique_IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -191,6 +194,19 @@ namespace ClientApplication.ServiceReference {
                 if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
                     this.PhoneField = value;
                     this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientApplication.ServiceReference.ProductDTO[] Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
                 }
             }
         }
@@ -774,6 +790,12 @@ namespace ClientApplication.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/GetProductByUnique_Id", ReplyAction="http://tempuri.org/IClientService/GetProductByUnique_IdResponse")]
         System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO> GetProductByUnique_IdAsync(int Unique_Id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/GetProductsByAuthorId", ReplyAction="http://tempuri.org/IClientService/GetProductsByAuthorIdResponse")]
+        ClientApplication.ServiceReference.ProductDTO[] GetProductsByAuthorId(int AuthorId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/GetProductsByAuthorId", ReplyAction="http://tempuri.org/IClientService/GetProductsByAuthorIdResponse")]
+        System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO[]> GetProductsByAuthorIdAsync(int AuthorId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/AddNewProduct", ReplyAction="http://tempuri.org/IClientService/AddNewProductResponse")]
         bool AddNewProduct(ClientApplication.ServiceReference.ProductDTO obj);
         
@@ -874,6 +896,14 @@ namespace ClientApplication.ServiceReference {
         
         public System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO> GetProductByUnique_IdAsync(int Unique_Id) {
             return base.Channel.GetProductByUnique_IdAsync(Unique_Id);
+        }
+        
+        public ClientApplication.ServiceReference.ProductDTO[] GetProductsByAuthorId(int AuthorId) {
+            return base.Channel.GetProductsByAuthorId(AuthorId);
+        }
+        
+        public System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO[]> GetProductsByAuthorIdAsync(int AuthorId) {
+            return base.Channel.GetProductsByAuthorIdAsync(AuthorId);
         }
         
         public bool AddNewProduct(ClientApplication.ServiceReference.ProductDTO obj) {

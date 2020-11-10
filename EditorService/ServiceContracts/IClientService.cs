@@ -45,6 +45,10 @@ namespace EditorService.ServiceContracts
         ProductDTO GetProductByUnique_Id(int Unique_Id);
 
         [OperationContract]
+        [WebGet(UriTemplate = "/GetProductsByAuthorId/{AuthorId}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        List<ProductDTO> GetProductsByAuthorId(int AuthorId);
+
+        [OperationContract]
         [WebGet(UriTemplate = "/AddNewProduct/{values}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         bool AddNewProduct(ProductDTO obj);
 

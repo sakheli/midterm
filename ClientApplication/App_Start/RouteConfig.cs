@@ -14,16 +14,17 @@ namespace ClientApplication
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Product",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Product", action = "Index", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
                 name: "Author",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Author", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Product",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Product", action = "Index", id = UrlParameter.Optional }
+            );
+        
 
             routes.MapRoute(
                 name: "Default",

@@ -18,6 +18,7 @@
       <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Personal_Id" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProductDTO" />
       <xs:element minOccurs="0" name="Unique_Id" nillable="true" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

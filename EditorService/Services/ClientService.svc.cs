@@ -54,6 +54,11 @@ namespace EditorService.Services
             return BusinessLogic.BussinessLogic.GetProductByUnique_Id(Unique_Id);
         }
 
+        public List<ProductDTO> GetProductsByAuthorId(int AuthorId)
+        {
+            return BusinessLogic.BussinessLogic.GetProductsByAuthorId(AuthorId);
+        }
+
         public bool AddNewProduct(ProductDTO obj)
         {
             return BusinessLogic.BussinessLogic.AddNewProduct(obj);

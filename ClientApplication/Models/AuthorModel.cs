@@ -55,5 +55,8 @@ namespace ClientApplication.Models
         [Display(Name = "ელექტონული ფოსტა")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+
+        public virtual List<ProductModel> Products { get; set; }
     }
 }

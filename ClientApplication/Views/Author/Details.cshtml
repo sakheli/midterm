@@ -91,6 +91,87 @@
 
     </dl>
 </div>
+
+
+<h4>წიგნები</h4>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().Unique_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().ProductType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().Publish_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().PublishingHouse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().Pages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.First().Address)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Products)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unique_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publish_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishingHouse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.ActionLink("შეცვლა", "Edit", "Products", new { id = item.Unique_Id }) |
+                @Html.ActionLink("დეტალური ინფორმაცია", "Products", "Details", new { id = item.Unique_Id }) |
+                @Html.ActionLink("წაშლა", "Delete", "Products", new { id = item.Unique_Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
 <p>
     @Html.ActionLink("შეცვლა", "Edit", new { id = Model.Unique_Id }) |
     @Html.ActionLink("უკან დაბრუნება", "Index")

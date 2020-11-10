@@ -42,5 +42,8 @@ namespace EditorService.DataContracts
 
         [DataMember]
         public string Email { get; set; }
+
+        [DataMember]
+        public virtual List<ProductDTO> Products { get; set; }
     }
 }

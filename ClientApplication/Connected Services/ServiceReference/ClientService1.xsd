@@ -95,10 +95,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetProductsByAuthorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthorId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductsByAuthorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="WcfService" minOccurs="0" name="GetProductsByAuthorIdResult" nillable="true" type="q8:ArrayOfProductDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddNewProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="WcfService" minOccurs="0" name="obj" nillable="true" type="q8:ProductDTO" />
+        <xs:element xmlns:q9="WcfService" minOccurs="0" name="obj" nillable="true" type="q9:ProductDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -112,7 +126,7 @@
   <xs:element name="UpdateProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="WcfService" minOccurs="0" name="obj" nillable="true" type="q9:ProductDTO" />
+        <xs:element xmlns:q10="WcfService" minOccurs="0" name="obj" nillable="true" type="q10:ProductDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -126,7 +140,7 @@
   <xs:element name="DeleteProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="WcfService" minOccurs="0" name="obj" nillable="true" type="q10:ProductDTO" />
+        <xs:element xmlns:q11="WcfService" minOccurs="0" name="obj" nillable="true" type="q11:ProductDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

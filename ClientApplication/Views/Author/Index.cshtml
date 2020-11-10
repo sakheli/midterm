@@ -9,6 +9,17 @@
 <p>
     @Html.ActionLink("ავტორის დამატება", "Create")
 </p>
+
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        სახელით ძიება: @Html.TextBox("searchData")
+        <input type="submit" value="ძიება" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -17,8 +28,8 @@
         <th>
             @Html.ActionLink("უნიკალური Id", "Index", new { sortOrder = ViewBag.UniqIdSortParm })
         </th>
-        <th> 
-            @Html.ActionLink("სახელი", "Index", new { sortOrder = ViewBag.NameSortParm }) 
+        <th>
+            @Html.ActionLink("სახელი", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
             @Html.ActionLink("გვარი", "Index", new { sortOrder = ViewBag.LastNameSortParm })

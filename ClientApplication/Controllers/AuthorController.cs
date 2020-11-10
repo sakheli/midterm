@@ -64,10 +64,10 @@ namespace ClientApplication.Controllers
                     authors = serviceModel.OrderBy(s => s.Lastname).ToList();
                     break;
                 case "gender_desc":
-                    authors = serviceModel.OrderByDescending(s => s.Gender).ToList();
+                    authors = serviceModel.OrderByDescending(s => s.Gender.Gender1).ToList();
                     break;
                 case "gender":
-                    authors = serviceModel.OrderBy(s => s.Gender).ToList();
+                    authors = serviceModel.OrderBy(s => s.Gender.Gender1).ToList();
                     break;
                 case "perid_desc":
                     authors = serviceModel.OrderByDescending(s => s.Personal_Id).ToList();
@@ -82,16 +82,16 @@ namespace ClientApplication.Controllers
                     authors = serviceModel.OrderBy(s => s.Birth_Date).ToList();
                     break;
                 case "count_desc":
-                    authors = serviceModel.OrderByDescending(s => s.Country).ToList();
+                    authors = serviceModel.OrderByDescending(s => s.Country.Name).ToList();
                     break;
                 case "count":
-                    authors = serviceModel.OrderBy(s => s.Country).ToList();
+                    authors = serviceModel.OrderBy(s => s.Country.Name).ToList();
                     break;
                 case "city_desc":
-                    authors = serviceModel.OrderByDescending(s => s.City).ToList();
+                    authors = serviceModel.OrderByDescending(s => s.City.Name).ToList();
                     break;
                 case "city":
-                    authors = serviceModel.OrderBy(s => s.City).ToList();
+                    authors = serviceModel.OrderBy(s => s.City.Name).ToList();
                     break;
                 case "phone_desc":
                     authors = serviceModel.OrderByDescending(s => s.Phone).ToList();
@@ -111,9 +111,9 @@ namespace ClientApplication.Controllers
             }
 
 
-            if (searchData != "")
+            if (!String.IsNullOrEmpty(searchData))
             {
-                authors = authors.Where(s => s.Firstname.Contains(searchData)).ToList();
+                authors = authors.Where(s => s.Firstname.Contains(searchData) || s.Lastname.Contains(searchData)).ToList();
             }
 
 
@@ -162,6 +162,20 @@ namespace ClientApplication.Controllers
             model.City = obj.City.Name;
             model.Phone = obj.Phone;
             model.Email = obj.Email;
+            model.Products = db.GetProductsByAuthorId(obj.Id).Select(i =>
+                new ProductModel
+                {
+                    Id = i.Id,
+                    Unique_Id = i.Unique_Id,
+                    Name = i.Name,
+                    Description = i.Description,
+                    ProductType = i.ProductType.Name,
+                    ISBN = i.ISBN,
+                    Publish_Date = i.Publish_Date,
+                    PublishingHouse = i.PublishingHouse.Name,
+                    Pages = i.Pages,
+                    Address = i.Address
+                }).ToList();
 
 
             return View(model);
