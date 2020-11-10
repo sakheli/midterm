@@ -60,6 +60,10 @@ namespace EditorService.ServiceContracts
         [OperationContract]
         [WebGet(UriTemplate = "/DeleteProduct/{values}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         bool DeleteProduct(ProductDTO obj);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/Auth", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        StaffDTO Authorize(string Email, string Password);
     }
 }
 

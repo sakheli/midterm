@@ -27,7 +27,7 @@ namespace ClientApplication.Models
         public int? Id_Gender { get; set; }
 
         [Display(Name = "თანამდებობა")]
-        public int Id_Role { get; set; }
+        public RoleModel Role { get; set; }
 
         [Required(ErrorMessage = "პირადი ნომერის მითითება აუცილებელია")]
         [StringLength(11, ErrorMessage = "პირადი ნომერი არ უნდა იყოს 11 ციფრზე მეტი")]
@@ -54,5 +54,10 @@ namespace ClientApplication.Models
         [Display(Name = "ელექტონული ფოსტა")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+
+        [Display(Name = "პაროლი")]
+        [DataType(DataType.Password)]
+        public string AccountPassword { get; set; }
     }
 }

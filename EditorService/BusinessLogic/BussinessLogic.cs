@@ -353,6 +353,34 @@ namespace EditorService.BusinessLogic
         }
 
 
+        public static StaffDTO Authorize(string Email, string Password) {
+            using (DBModel ent = new DBModel())
+            {
+                try
+                {
+                    var result = ent.Staffs.Select(i =>
+                    new StaffDTO
+                    {
+                        Id = i.Id,
+                        Firstname = i.Firstname,
+                        Lastname = i.Lastname,
+                        Role = new RoleDTO { Id = i.Role.Id, Name = i.Role.Name, Description = i.Role.Description },
+                        Email = i.Email,
+                        Country = new CountryDTO { Name = i.Country.Name, Id = i.Country.Id },
+                        Gender = new GenderDTO { Id = i.Gender.Id, Gender1 = i.Gender.Gender1 },
+                        Birth_Date = i.Birth_Date,
+                        AccountPassword = i.AccountPassword,
+                        City = new CityDTO {Id = i.City.Id, Name = i.City.Name },
+                        Phone = i.Phone                        
+                    }).Where(s => s.Email == Email && s.AccountPassword == Password).First();
 
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

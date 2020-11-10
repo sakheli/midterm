@@ -80,4 +80,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Publishing_HouseDTO" nillable="true" type="tns:Publishing_HouseDTO" />
+  <xs:complexType name="StaffDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="tns:RoleDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StaffDTO" nillable="true" type="tns:StaffDTO" />
+  <xs:complexType name="RoleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleDTO" nillable="true" type="tns:RoleDTO" />
 </xs:schema>

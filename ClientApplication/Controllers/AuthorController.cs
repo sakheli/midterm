@@ -353,5 +353,28 @@ namespace ClientApplication.Controllers
                 return View();
             }
         }
+
+
+        public ActionResult Auth()
+        {
+            if (String.IsNullOrEmpty(HttpContext.Response.Cookies["Email"].Value) || String.IsNullOrEmpty(HttpContext.Response.Cookies["Password"].Value))
+            {
+                return View();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Auth(StaffModel model)
+        {
+            if (String.IsNullOrEmpty(model.Email) || String.IsNullOrEmpty(model.AccountPassword)) {
+                return View();
+            }
+
+            HttpContext.Response.Cookies.Add(new HttpCookie("Email", model.Email));
+            HttpContext.Response.Cookies.Add(new HttpCookie("Password", model.AccountPassword));
+            return RedirectToAction("Index");
+        }
     }
 }

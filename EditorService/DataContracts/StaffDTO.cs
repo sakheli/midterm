@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -20,10 +21,10 @@ namespace EditorService.DataContracts
         public string Lastname { get; set; }
 
         
-        public int? Id_Gender { get; set; }
+        public GenderDTO Gender { get; set; }
 
         [DataMember]
-        public int Id_Role { get; set; }
+        public RoleDTO Role { get; set; }
 
         
         public string Personal_Id { get; set; }
@@ -32,10 +33,10 @@ namespace EditorService.DataContracts
         public DateTime Birth_Date { get; set; }
 
         
-        public int? Id_Country { get; set; }
+        public CountryDTO Country { get; set; }
 
         
-        public int? Id_City { get; set; }
+        public CityDTO City { get; set; }
 
         
         public string Phone { get; set; }
@@ -43,5 +44,8 @@ namespace EditorService.DataContracts
         [DataMember]
         public string Email { get; set; }
 
+
+        [StringLength(255)]
+        public string AccountPassword { get; set; }
     }
 }

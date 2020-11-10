@@ -151,4 +151,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Authorize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthorizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="WcfService" minOccurs="0" name="AuthorizeResult" nillable="true" type="q12:StaffDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

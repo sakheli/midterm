@@ -38,12 +38,6 @@ namespace EditorService.Services
             return BusinessLogic.BussinessLogic.DeleteAuthor(obj);
         }
 
-
-
-
-
-
-
         public List<ProductDTO> GetAllProducts()
         {
             return BusinessLogic.BussinessLogic.GetAllProducts();
@@ -72,6 +66,11 @@ namespace EditorService.Services
         public bool DeleteProduct(ProductDTO obj)
         {
             return BusinessLogic.BussinessLogic.DeleteProduct(obj);
+        }
+
+
+        public StaffDTO Authorize(string Email, string Password) {
+            return BusinessLogic.BussinessLogic.Authorize(Email, Password);
         }
     }
 }
