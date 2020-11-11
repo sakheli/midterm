@@ -147,7 +147,7 @@
     <Compile Include="Models\ProductTypeModel.cs" />
     <Compile Include="Models\Publishing_HouseModel.cs" />
     <Compile Include="Models\RoleModel.cs" />
-    <Compile Include="Models\StaffModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +157,7 @@
     <Content Include="Connected Services\ServiceReference\ClientApplication.ServiceReference.ProductDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiceReference\ClientApplication.ServiceReference.StaffDTO.datasource">
+    <Content Include="Connected Services\ServiceReference\ClientApplication.ServiceReference.UserDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference\ClientService.disco" />
@@ -224,6 +224,7 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Author\Auth.cshtml" />
+    <Content Include="Views\Author\NotAllowed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

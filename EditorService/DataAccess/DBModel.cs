@@ -20,7 +20,7 @@ namespace EditorService.DataAccess
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<Publishing_House> Publishing_House { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<User> Staffs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -35,30 +35,18 @@ namespace EditorService.DataAccess
                 .WithOptional(e => e.City)
                 .HasForeignKey(e => e.Id_City);
 
-            modelBuilder.Entity<City>()
-                .HasMany(e => e.Staffs)
-                .WithOptional(e => e.City)
-                .HasForeignKey(e => e.Id_City);
 
             modelBuilder.Entity<Country>()
                 .HasMany(e => e.Authors)
                 .WithOptional(e => e.Country)
                 .HasForeignKey(e => e.Id_Country);
 
-            modelBuilder.Entity<Country>()
-                .HasMany(e => e.Staffs)
-                .WithOptional(e => e.Country)
-                .HasForeignKey(e => e.Id_Country);
 
             modelBuilder.Entity<Gender>()
                 .HasMany(e => e.Authors)
                 .WithOptional(e => e.Gender)
                 .HasForeignKey(e => e.Id_Gender);
 
-            modelBuilder.Entity<Gender>()
-                .HasMany(e => e.Staffs)
-                .WithOptional(e => e.Gender)
-                .HasForeignKey(e => e.Id_Gender);
 
             modelBuilder.Entity<ProductType>()
                 .HasMany(e => e.Products)
@@ -71,13 +59,13 @@ namespace EditorService.DataAccess
                 .HasForeignKey(e => e.Id_PublishingHouse);
 
             modelBuilder.Entity<Role>()
-                .HasMany(e => e.Staffs)
+                .HasMany(e => e.Users)
                 .WithRequired(e => e.Role)
                 .HasForeignKey(e => e.Id_Role)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Staff>()
-                .Property(e => e.AccountPassword)
+            modelBuilder.Entity<User>()
+                .Property(e => e.Password)
                 .IsUnicode(false);
         }
     }

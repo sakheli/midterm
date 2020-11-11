@@ -69,7 +69,7 @@ namespace EditorService.Services
         }
 
 
-        public StaffDTO Authorize(string Email, string Password) {
+        public UserDTO Authorize(string Email, string Password) {
             return BusinessLogic.BussinessLogic.Authorize(Email, Password);
         }
     }

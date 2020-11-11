@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Not allowed";
+}
+
+<h1>მიუწვდომელი რესურსი</h1>
+
+
+    <div class="form-horizontal">
+        <hr />
+        
+            @if (Session["Role"] != null)
+            {
+                <h3>ამ როლს არ აქვს ამის გაკეთების უფლება</h3>
+            }
+            else
+            {
+                <h3>
+                    @Html.ActionLink("გაიარე ავტორიზაცია", "Auth")
+                </h3>
+            }
+    </div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

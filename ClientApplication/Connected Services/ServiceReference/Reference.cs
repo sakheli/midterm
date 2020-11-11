@@ -746,9 +746,9 @@ namespace ClientApplication.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StaffDTO", Namespace="WcfService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserDTO", Namespace="WcfService")]
     [System.SerializableAttribute()]
-    public partial class StaffDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class UserDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -757,13 +757,7 @@ namespace ClientApplication.ServiceReference {
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ClientApplication.ServiceReference.RoleDTO RoleField;
@@ -792,19 +786,6 @@ namespace ClientApplication.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Firstname {
-            get {
-                return this.FirstnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstnameField, value) != true)) {
-                    this.FirstnameField = value;
-                    this.RaisePropertyChanged("Firstname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
                 return this.IdField;
@@ -813,19 +794,6 @@ namespace ClientApplication.ServiceReference {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Lastname {
-            get {
-                return this.LastnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastnameField, value) != true)) {
-                    this.LastnameField = value;
-                    this.RaisePropertyChanged("Lastname");
                 }
             }
         }
@@ -1001,10 +969,10 @@ namespace ClientApplication.ServiceReference {
         System.Threading.Tasks.Task<bool> DeleteProductAsync(ClientApplication.ServiceReference.ProductDTO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/Authorize", ReplyAction="http://tempuri.org/IClientService/AuthorizeResponse")]
-        ClientApplication.ServiceReference.StaffDTO Authorize(string Email, string Password);
+        ClientApplication.ServiceReference.UserDTO Authorize(string Email, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/Authorize", ReplyAction="http://tempuri.org/IClientService/AuthorizeResponse")]
-        System.Threading.Tasks.Task<ClientApplication.ServiceReference.StaffDTO> AuthorizeAsync(string Email, string Password);
+        System.Threading.Tasks.Task<ClientApplication.ServiceReference.UserDTO> AuthorizeAsync(string Email, string Password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1122,11 +1090,11 @@ namespace ClientApplication.ServiceReference {
             return base.Channel.DeleteProductAsync(obj);
         }
         
-        public ClientApplication.ServiceReference.StaffDTO Authorize(string Email, string Password) {
+        public ClientApplication.ServiceReference.UserDTO Authorize(string Email, string Password) {
             return base.Channel.Authorize(Email, Password);
         }
         
-        public System.Threading.Tasks.Task<ClientApplication.ServiceReference.StaffDTO> AuthorizeAsync(string Email, string Password) {
+        public System.Threading.Tasks.Task<ClientApplication.ServiceReference.UserDTO> AuthorizeAsync(string Email, string Password) {
             return base.Channel.AuthorizeAsync(Email, Password);
         }
     }

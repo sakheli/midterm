@@ -63,7 +63,7 @@ namespace EditorService.ServiceContracts
 
         [OperationContract]
         [WebGet(UriTemplate = "/Auth", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
-        StaffDTO Authorize(string Email, string Password);
+        UserDTO Authorize(string Email, string Password);
     }
 }
 

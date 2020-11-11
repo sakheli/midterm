@@ -13,7 +13,6 @@ namespace EditorService.DataAccess
         public Country()
         {
             Authors = new HashSet<Author>();
-            Staffs = new HashSet<Staff>();
         }
 
         public int Id { get; set; }
@@ -23,8 +22,5 @@ namespace EditorService.DataAccess
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Author> Authors { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Staff> Staffs { get; set; }
     }
 }

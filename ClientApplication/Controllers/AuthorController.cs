@@ -236,6 +236,11 @@ namespace ClientApplication.Controllers
         // GET: Author/Edit/5
         public ActionResult Edit(int id)
         {
+            if(!IsAuthorized())
+            {
+                return RedirectToAction("NotAllowed");
+            }
+
             AuthorModel model = new AuthorModel { };
 
             AuthorDTO obj = db.GetAuthorByUnique_Id(id);
@@ -355,6 +360,13 @@ namespace ClientApplication.Controllers
         }
 
 
+        public ActionResult NotAllowed()
+        {           
+            return View();
+        }
+
+
+
         public ActionResult Auth()
         {
             if (String.IsNullOrEmpty(HttpContext.Response.Cookies["Email"].Value) || String.IsNullOrEmpty(HttpContext.Response.Cookies["Password"].Value))
@@ -365,16 +377,61 @@ namespace ClientApplication.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult Auth(StaffModel model)
+
+        public ActionResult Logout()
         {
-            if (String.IsNullOrEmpty(model.Email) || String.IsNullOrEmpty(model.AccountPassword)) {
+            if (Session["Email"] == null || Session["Password"] == null || Session["Role"] == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Session.Remove("Email");
+            Session.Remove("Password");
+            Session.Remove("Role");
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Auth(UserModel model)
+        {
+            if (String.IsNullOrEmpty(model.Email) || String.IsNullOrEmpty(model.Password)) {
+                return View();
+            }
+            UserDTO data = db.Authorize(model.Email, model.Password);
+             
+
+            if (data != null)
+            {
+                UserModel user = new UserModel { Id = data.Id, Email = data.Email, Password = model.Password, Role = new RoleModel { Id = data.Role.Id, Name = data.Role.Name, Description = data.Role.Description } };
+
+                Session.Add("Email", user.Email);
+                Session.Add("Password", user.Password);
+                Session.Add("Role", user.Role.Name);
+
+                return RedirectToAction("Index");
+            } else
+            {
                 return View();
             }
 
-            HttpContext.Response.Cookies.Add(new HttpCookie("Email", model.Email));
-            HttpContext.Response.Cookies.Add(new HttpCookie("Password", model.AccountPassword));
-            return RedirectToAction("Index");
         }
+
+
+        private bool IsAuthorized(string requiredRole = "მენეჯერი") {
+            if (Session["Email"] == null || Session["Password"] == null || Session["Role"] == null)
+            {
+                return false;
+            } 
+
+
+            if (Session["Role"].ToString() != requiredRole)
+            {
+                return false;
+            }
+
+
+            return true;
+        } 
     }
 }

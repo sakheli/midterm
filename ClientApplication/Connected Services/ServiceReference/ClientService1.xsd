@@ -162,7 +162,7 @@
   <xs:element name="AuthorizeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="WcfService" minOccurs="0" name="AuthorizeResult" nillable="true" type="q12:StaffDTO" />
+        <xs:element xmlns:q12="WcfService" minOccurs="0" name="AuthorizeResult" nillable="true" type="q12:UserDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
