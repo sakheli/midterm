@@ -17,7 +17,6 @@ C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EntityFramework.dll
 C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EntityFramework.SqlServer.dll
 C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EntityFramework.xml
 C:\Users\sakheli\Desktop\midterm\midterm\EditorService\bin\EntityFramework.SqlServer.xml
-C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.csprojAssemblyReference.cache
 C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.csproj.CoreCompileInputs.cache
 C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.csproj.CopyComplete
 C:\Users\sakheli\Desktop\midterm\midterm\EditorService\obj\Debug\EditorService.dll

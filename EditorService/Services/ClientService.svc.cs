@@ -53,9 +53,9 @@ namespace EditorService.Services
             return BusinessLogic.BussinessLogic.GetProductsByAuthorId(AuthorId);
         }
 
-        public bool AddNewProduct(ProductDTO obj)
+        public bool AddNewProduct(ProductDTO obj, int unique_id)
         {
-            return BusinessLogic.BussinessLogic.AddNewProduct(obj);
+            return BusinessLogic.BussinessLogic.AddNewProduct(obj, unique_id);
         }
 
         public bool UpdateProduct(ProductDTO obj)

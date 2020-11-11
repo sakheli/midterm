@@ -410,7 +410,7 @@ namespace ClientApplication.Controllers
                 };
 
 
-                if (db.AddNewProduct(obj))
+                if (db.AddNewProduct(obj, id))
                 {
                     return RedirectToAction("Index");
                 }

@@ -50,7 +50,7 @@ namespace EditorService.ServiceContracts
 
         [OperationContract]
         [WebGet(UriTemplate = "/AddNewProduct/{values}", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
-        bool AddNewProduct(ProductDTO obj);
+        bool AddNewProduct(ProductDTO obj, int unique_id);
 
 
         [OperationContract]

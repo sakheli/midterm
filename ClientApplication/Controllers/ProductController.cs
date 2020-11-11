@@ -106,7 +106,7 @@ namespace ClientApplication.Controllers
                     Address = model.Address
                 };
 
-                if (!db.AddNewProduct(obj))
+                if (!db.AddNewProduct(obj, 1))
                 {
                     return View(model);
                 }

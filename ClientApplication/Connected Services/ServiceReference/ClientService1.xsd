@@ -113,6 +113,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q9="WcfService" minOccurs="0" name="obj" nillable="true" type="q9:ProductDTO" />
+        <xs:element minOccurs="0" name="unique_id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

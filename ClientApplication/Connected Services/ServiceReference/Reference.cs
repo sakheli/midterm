@@ -967,10 +967,10 @@ namespace ClientApplication.ServiceReference {
         System.Threading.Tasks.Task<ClientApplication.ServiceReference.ProductDTO[]> GetProductsByAuthorIdAsync(int AuthorId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/AddNewProduct", ReplyAction="http://tempuri.org/IClientService/AddNewProductResponse")]
-        bool AddNewProduct(ClientApplication.ServiceReference.ProductDTO obj);
+        bool AddNewProduct(ClientApplication.ServiceReference.ProductDTO obj, int unique_id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/AddNewProduct", ReplyAction="http://tempuri.org/IClientService/AddNewProductResponse")]
-        System.Threading.Tasks.Task<bool> AddNewProductAsync(ClientApplication.ServiceReference.ProductDTO obj);
+        System.Threading.Tasks.Task<bool> AddNewProductAsync(ClientApplication.ServiceReference.ProductDTO obj, int unique_id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientService/UpdateProduct", ReplyAction="http://tempuri.org/IClientService/UpdateProductResponse")]
         bool UpdateProduct(ClientApplication.ServiceReference.ProductDTO obj);
@@ -1082,12 +1082,12 @@ namespace ClientApplication.ServiceReference {
             return base.Channel.GetProductsByAuthorIdAsync(AuthorId);
         }
         
-        public bool AddNewProduct(ClientApplication.ServiceReference.ProductDTO obj) {
-            return base.Channel.AddNewProduct(obj);
+        public bool AddNewProduct(ClientApplication.ServiceReference.ProductDTO obj, int unique_id) {
+            return base.Channel.AddNewProduct(obj, unique_id);
         }
         
-        public System.Threading.Tasks.Task<bool> AddNewProductAsync(ClientApplication.ServiceReference.ProductDTO obj) {
-            return base.Channel.AddNewProductAsync(obj);
+        public System.Threading.Tasks.Task<bool> AddNewProductAsync(ClientApplication.ServiceReference.ProductDTO obj, int unique_id) {
+            return base.Channel.AddNewProductAsync(obj, unique_id);
         }
         
         public bool UpdateProduct(ClientApplication.ServiceReference.ProductDTO obj) {
