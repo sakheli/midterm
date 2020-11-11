@@ -71,14 +71,14 @@ namespace ClientApplication.Controllers
         {
             return View(new ProductModel { });
         }
-
+         
         // POST: Product/Create
         [HttpPost]
         public ActionResult Create(ProductModel model)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            //try
+            //{
+            //    // TODO: Add insert logic here
                 if (!ModelState.IsValid)
                     throw new Exception("მოდელი არ არის ვალიდური");
 
@@ -113,11 +113,11 @@ namespace ClientApplication.Controllers
 
                 return RedirectToAction("Index");
 
-            }
-            catch
-            {
-                return View(model);
-            }
+            //}
+            //catch
+            //{
+            //    return View(model);
+            //}
         }
 
         // GET: Product/Edit/5

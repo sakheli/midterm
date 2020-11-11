@@ -54,6 +54,7 @@
   <xs:complexType name="ProductDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Authors" nillable="true" type="tns:ArrayOfAuthorDTO" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ISBN" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />

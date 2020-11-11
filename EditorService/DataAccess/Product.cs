@@ -47,7 +47,6 @@ namespace EditorService.DataAccess
 
         public virtual Publishing_House Publishing_House { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Author> Authors { get; set; }
     }
 }

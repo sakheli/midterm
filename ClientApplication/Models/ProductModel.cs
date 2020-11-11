@@ -46,5 +46,7 @@ namespace ClientApplication.Models
 
         [Display(Name = "მისამართი")]
         public string Address { get; set; }
+
+        public virtual List<AuthorModel> Authors { get; set; }
     }
 }

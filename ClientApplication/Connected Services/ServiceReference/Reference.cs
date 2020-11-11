@@ -446,6 +446,9 @@ namespace ClientApplication.ServiceReference {
         private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientApplication.ServiceReference.AuthorDTO[] AuthorsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -491,6 +494,19 @@ namespace ClientApplication.ServiceReference {
                 if ((object.ReferenceEquals(this.AddressField, value) != true)) {
                     this.AddressField = value;
                     this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientApplication.ServiceReference.AuthorDTO[] Authors {
+            get {
+                return this.AuthorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AuthorsField, value) != true)) {
+                    this.AuthorsField = value;
+                    this.RaisePropertyChanged("Authors");
                 }
             }
         }

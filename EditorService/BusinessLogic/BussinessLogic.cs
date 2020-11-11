@@ -263,8 +263,8 @@ namespace EditorService.BusinessLogic
         {
             using (DBModel ent = new DBModel())
             {
-                try
-                {
+                //try
+                //{
                     if (ent.Products.Any(i => i.Unique_Id == obj.Unique_Id))
                         throw new Exception("Already exists");
 
@@ -288,11 +288,11 @@ namespace EditorService.BusinessLogic
                     ent.SaveChanges();
 
                     return true;
-                }
-                catch (Exception ex)
-                {
-                    return false;
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    return false;
+                //}
             }
         }
 

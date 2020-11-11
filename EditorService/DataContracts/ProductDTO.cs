@@ -39,5 +39,8 @@ namespace EditorService.DataContracts
 
         [DataMember]
         public string Address { get; set; }
+
+        [DataMember]
+        public virtual List<AuthorDTO> Authors { get; set; }
     }
 }

@@ -236,11 +236,6 @@ namespace ClientApplication.Controllers
         // GET: Author/Edit/5
         public ActionResult Edit(int id)
         {
-            if(!IsAuthorized())
-            {
-                return RedirectToAction("NotAllowed");
-            }
-
             AuthorModel model = new AuthorModel { };
 
             AuthorDTO obj = db.GetAuthorByUnique_Id(id);
@@ -366,6 +361,69 @@ namespace ClientApplication.Controllers
         }
 
 
+        public ActionResult AddProduct(int? id)
+        {
+            if (!IsAuthorized())
+            {
+                return RedirectToAction("NotAllowed");
+            }
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddProduct(int id, ProductModel model)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+                if (!ModelState.IsValid)
+                    throw new Exception("მოდელი არ არის ვალიდური");
+
+                Random rd = new Random();
+                int Unique_Id = rd.Next(100000, 999999);
+                var objA = db.GetAuthorByUnique_Id(Unique_Id);
+                if (objA == null)
+                {
+                    Unique_Id = rd.Next(100000, 999999);
+                }
+
+                string ISBN = new string(Enumerable.Repeat("0123456789", 13).Select(s => s[rd.Next(s.Length)]).ToArray());
+                var author = db.GetAuthorByUnique_Id(id);
+                var authors = new List<AuthorDTO>();
+                authors.Add(author);
+
+                ProductDTO obj = new ProductDTO
+                {
+                    Unique_Id = Unique_Id,
+                    Name = model.Name,
+                    Description = model.Description,
+                    ProductType = new ProductTypeDTO { Name = model.ProductType },
+                    ISBN = ISBN,
+                    Publish_Date = model.Publish_Date,
+                    PublishingHouse = new Publishing_HouseDTO { Name = model.PublishingHouse },
+                    Pages = model.Pages,
+                    Address = model.Address,
+                    Authors = authors.ToArray()
+
+                };
+
+
+                if (db.AddNewProduct(obj))
+                {
+                    return RedirectToAction("Index");
+                }
+                
+                    return View(model);
+
+            }
+            catch
+            {
+                return View(model);
+            }
+        }
+
 
         public ActionResult Auth()
         {
@@ -398,6 +456,7 @@ namespace ClientApplication.Controllers
             if (String.IsNullOrEmpty(model.Email) || String.IsNullOrEmpty(model.Password)) {
                 return View();
             }
+
             UserDTO data = db.Authorize(model.Email, model.Password);
              
 
